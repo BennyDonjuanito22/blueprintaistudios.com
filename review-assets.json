@@ -1,0 +1,101 @@
+{
+  "logo_suite": [
+    "Primary lockup: Blueprint grid plus node-based B monogram. with the full business name.",
+    "Icon mark: simplify the Blueprint grid plus node-based B monogram. into a square avatar for favicons, socials, and app badges.",
+    "Text-only wordmark: keep one clean horizontal version for signatures, invoices, PDFs, and letterhead."
+  ],
+  "support_inboxes": {
+    "primary": "support@blueprintaistudios.com",
+    "sales": "hello@blueprintaistudios.com",
+    "ops": "ops@blueprintaistudios.com"
+  },
+  "email_signature": {
+    "display_name": "BlueprintAI Studio",
+    "title_line": "Precise, strategic, and trust-heavy.",
+    "website": "https://blueprintaistudios.com",
+    "primary_contact": "support@blueprintaistudios.com",
+    "accent": "#F59E0B"
+  },
+  "letterhead": [
+    "Top band uses the primary color, logo lockup, and one short positioning line.",
+    "Contact block shows website, support inbox, and one escalation inbox in the footer.",
+    "Invoices, proposals, and one-page PDFs keep the display font for headings and the body font for all operational copy."
+  ],
+  "social_profiles": [
+    {
+      "platform": "Instagram",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "Facebook",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "TikTok",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "YouTube",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "X",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "Threads",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "Pinterest",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "Snapchat",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "Kick",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "OnlyFans",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    },
+    {
+      "platform": "LinkedIn",
+      "handle": "@blueprintaistudios",
+      "bio_focus": "The site, proposal decks, and proof surfaces all need one technical but readable planning identity"
+    }
+  ],
+  "posting_cadence": {
+    "label": "Authority-service cadence",
+    "schedule": [
+      "Prepare 1 authority post each weekday, 2 short-form proof clips per week, and 1 email follow-up per week for review.",
+      "Tie every post to one bounded offer, one proof point, or one objection-handling angle.",
+      "Keep publication blocked until operator approval, but keep the queue continuously review-ready."
+    ],
+    "calendar": [
+      "Monday: problem statement and stakes",
+      "Tuesday: proof or diagnostic insight",
+      "Wednesday: process or walkthrough",
+      "Thursday: objection handling",
+      "Friday: CTA and scope reminder",
+      "Weekend: FAQ, recap, or evergreen library update"
+    ]
+  },
+  "merch_review_scope": [
+    "Merch is not a primary launch surface for BlueprintAI Studio.",
+    "If created at all, keep it review-only and limited to leave-behind collateral, presentation decks, or operator onboarding materials."
+  ]
+}
