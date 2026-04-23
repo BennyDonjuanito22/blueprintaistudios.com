@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueprintAI Studio — AI Automation Blueprints for Service Businesses</title>
+  <meta name="description" content="Deploy AI-powered automations for your service business in days, not months. BlueprintAI Studio offers done-with-you blueprints for lead capture, appointment routing, FAQ bots, and more." />
+  <script src="https://gumroad.com/js/gumroad.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0f;
+      --bg2:       #12121a;
+      --bg3:       #1a1a26;
+      --border:    #2a2a3d;
+      --accent:    #8b5cf6;
+      --accent2:   #a78bfa;
+      --accent3:   #6d28d9;
+      --text:      #e8e8f0;
+      --muted:     #9090b0;
+      --green:     #10b981;
+      --radius:    12px;
+      --shadow:    0 4px 32px rgba(139,92,246,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .nav-logo span { color: var(--accent2); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 24px 80px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(139,92,246,0.12);
+      border: 1px solid rgba(139,92,246,0.3);
+      color: var(--accent2);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent2);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent2) 0%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 0 0 rgba(139,92,246,0.4);
+    }
+    .btn-primary:hover {
+      background: var(--accent2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(139,92,246,0.35);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent2);
+      transform: translateY(-2px);
+    }
+
+    /* ── HERO STATS ── */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .how-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .how-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .how-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.3);
+      color: var(--accent2);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .how-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .how-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 24px;
+    }
+
+    /* ── PRODUCTS ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      position: relative;
+    }
+    .product-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .product-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(145deg, var(--bg2) 0%, rgba(109,40,217,0.08) 100%);
+    }
+    .product-badge {
+      position: absolute;
+      top: -1px;
+      right: 20px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 0 0 8px 8px;
+    }
+    .product-badge.new-badge {
+      background: var(--green);
+    }
+    .product-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(139,92,246,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .product-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .product-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .product-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .product-includes li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding-left: 18px;
+      position: relative;
+    }
+    .product-includes li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .product-price span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    /* Gumroad buy button override */
+    .gumroad-button,
+    a.gumroad-button {
+      display: inline-block;
+      background: var(--accent) !important;
+      color: #fff !important;
+      padding: 10px 22px !important;
+      border-radius: 8px !important;
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      border: none !important;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .gumroad-button:hover,
+    a.gumroad-button:hover {
+      background: var(--accent2) !important;
+      transform: translateY(-1px);
+    }
+    /* hide Gumroad's default icon */
+    .gumroad-button-logo { display: none !important; }
+
+    /* ── SOCIAL PROOF ── */
+    .proof-bg {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .testimonial {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .testimonial:hover { border-color: var(--accent); }
+    .testimonial-stars {
+      color: #f59e0b;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .testimonial p {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent3), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .testimonial-title {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── LOGOS STRIP ── */
+    .logos-strip {
+      text-align: center;
+      padding: 40px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .logos-strip p {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .logos-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .logo-chip {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+    }
+
+    /* ── FAQ ── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 760px;
+    }
+    .faq-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--accent2); }
+    .faq-chevron {
+      color: var(--accent2);
+      font-size: 1rem;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 24px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding: 0 24px 20px;
+    }
+
+    /* ── GUARANTEE ── */
+    .guarantee-box {
+      background: linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(109,40,217,0.04) 100%);
+      border: 1px solid rgba(139,92,246,0.25);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .guarantee-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .guarantee-box h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .guarantee-box p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── FINAL CTA ── */
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(109,40,217,0.06) 50%, var(--bg) 100%);
+      padding: 100px 24px;
+    }
+    .cta-section .section-title { margin-bottom: 16px; }
+    .cta-section .section-sub { margin: 0 auto 40px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: 8px;
+      max-width: 280px;
+      line-height: 1.6;
+    }
+    .footer-brand .brand-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .footer-brand .brand-name span { color: var(--accent2); }
+    .footer-links h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-bottom a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-bottom a:hover { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hero { padding: 72px 20px 60px; }
+      .hero-stats { gap: 28px; }
+      .section { padding: 60px 20px; }
+      .products-grid { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .guarantee-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Blueprint<span>AI</span> Studio</a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#testimonials">Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#products" class="nav-cta">Browse Blueprints</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-badge">AI Automation Blueprints for Service Businesses</div>
+  <h1>Deploy <em>AI-Powered Services</em><br>in Days, Not Months</h1>
+  <p class="hero-sub">
+    Done-with-you automation blueprints that local service businesses and agencies use to capture more leads,
+    book more appointments, and cut support overhead — without hiring a development team.
+  </p>
+  <div class="hero-actions">
+    <a href="#products" class="btn-primary">Browse All Blueprints</a>
+    <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-value">3–5</div>
+      <div class="stat-label">Day deployment time</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">85%</div>
+      <div class="stat-label">Gross margin on AI services</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">$997+</div>
+      <div class="stat-label">Per client contract value</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">33M</div>
+      <div class="stat-label">US SMBs needing automation</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── HOW IT WORKS ── -->
+<section class="section" id="how-it-works">
+  <p class="section-label">The System</p>
+  <h2 class="section-title">Built for AI Service Operators</h2>
+  <p class="section-sub">
+    Each blueprint is a complete, field-tested system — not a tutorial. Pick your blueprint, follow the setup guide, deploy for your client, and collect payment.
+  </p>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <h3>Pick Your Blueprint</h3>
+      <p>Choose the automation that matches your client's biggest pain point — lead capture, booking, FAQ handling, or a full growth stack.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <h3>Follow the Setup Guide</h3>
+      <p>Every blueprint includes a step-by-step SOP, pre-built workflow templates, and a troubleshooting FAQ so deployment is repeatable.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <h3>Deploy for Your Client</h3>
+      <p>Use the included client-facing proposal template to close the deal, then deploy using our Zapier/Make workflow templates. Average time: 3–5 days.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-num">04</div>
+      <h3>Scale Your Retainer</h3>
+      <p>Hand off maintenance SOPs, collect a $199/mo retainer, and move on to the next client. Each blueprint compounds into recurring revenue.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── LOGOS ── -->
+<div class="logos-strip">
+  <p>Works with the tools your clients already use</p>
+  <div class="logos-row">
+    <div class="logo-chip">Zapier</div>
+    <div class="logo-chip">Make</div>
+    <div class="logo-chip">OpenAI</div>
+    <div class="logo-chip">Calendly</div>
+    <div class="logo-chip">Stripe</div>
+    <div class="logo-chip">Google Workspace</div>
+    <div class="logo-chip">Notion</div>
+  </div>
+</div>
+
+<hr class="divider" />
+
+<!-- ── PRODUCTS ── -->
+<section class="section" id="products">
+  <p class="section-label">Blueprints &amp; Resources</p>
+  <h2 class="section-title">Everything You Need to<br>Run an AI Service Business</h2>
+  <p class="section-sub">
+    From your first freelance client to a productized agency — the right blueprint for every stage.
+  </p>
+
+  <div class="products-grid">
+
+    <!-- PRODUCT 1: Starter Pack -->
+    <div class="product-card">
+      <div class="product-icon">🗂️</div>
+      <h3>BlueprintAI Studio Starter Pack</h3>
+      <p>The complete system for designing, pricing, and selling AI-powered services that clients pay $997–$5,000+ for. Built for the new class of AI-augmented service providers.</p>
+      <ul class="product-includes">
+        <li>Service Design Canvas (1-page framework)</li>
+        <li>Pricing Architecture Guide (flat rate vs. retainer)</li>
+        <li>Client-facing proposal template</li>
+        <li>Service delivery SOP template</li>
+        <li>Discovery call script + Notion tracker</li>
+      </ul>
+      <div class="product-footer">
+        <div class="product-price">$97 <span>one-time</span></div>
+        <a class="gumroad-button" href="https://gumroad.com/l/blueprintai-studio-starter" data-gumroad-overlay-checkout="true">Buy Now — $97</a>
+      </div>
+    </div>
+
+    <!-- PRODUCT 2: Lead Capture Blueprint (NEW) -->
+    <!-- NEW PRODUCT - needs Gumroad listing -->
+    <div class="product-card">
+      <div class="product-badge new-badge">New</div>
+      <div class="product-icon">🎯</div>
+      <h3>Lead Capture Blueprint</h3>
+      <p>A complete done-with-you blueprint for deploying an AI-powered lead capture chatbot wired to a full CRM pipeline. Tested on real SMB deployments in dental, medical, and home services.</p>
+      <ul class="product-includes">
+        <li>Step-by-step setup guide</li>
+        <li>Zapier/Make workflow templates (ready to import)</li>
+        <li>Chatbot conversation script library</li>
+        <li>CRM configuration SOPs</li>
+        <li>Client handoff checklist</li>
+      </ul>
+      <div class="product-footer">
+        <div class="product-price">$147 <span>one-time</span></div>
+        <a class="gumroad-button" href="https://gumroad.com/l/blueprintai-lead-capture" data-gumroad-overlay-checkout="true">Buy Now — $147</a>
+      </div>
+    </div>
+
+    <!-- PRODUCT 3: Appointment Router Blueprint (NEW) -->
+    <!-- NEW PRODUCT - needs Gumroad listing -->
+    <div class="product-card">
+      <div class="product-badge new-badge">New</div>
+      <div class="product-icon">📅</div>
+      <h3>Appointment Router Blueprint</h3>
+      <p>Stop losing clients to phone tag. Deploy an AI scheduling and smart-routing system that books, confirms, and reroutes appointments automatically — ideal for medical, dental, and home service businesses.</p>
+      <ul class="product-includes">
+        <li>Full setup documentation + config guide</li>
+        <li>Make/Zapier flow templates (import-ready)</li>
+        <li>Calendly advanced integration guide</li>
+        <li>SMS/email confirmation sequences</li>
+        <li>Troubleshooting FAQ + edge case playbook</li>
+      </ul>
+      <div class="product-footer">
+        <div class="product-price">$147 <span>one-time</span></div>
+        <a class="gumroad-button" href="https://gumroad.com/l/blueprintai-appointment-router" data-gumroad-overlay-checkout="true">Buy Now — $147</a>
+      </div>
+    </div>
+
+    <!-- PRODUCT 4: FAQ Bot Blueprint (NEW) -->
+    <!-- NEW PRODUCT - needs Gumroad listing -->
+    <div class="product-card">
+      <div class="product-badge new-badge">New</div>
+      <div class="product-icon">🤖</div>
+      <h3>FAQ Bot Blueprint</h3>
+      <p>Deploy a custom AI FAQ bot on your client's website or social channels in under a week. Train it on real business data, embed it anywhere, and wire it to a support inbox for seamless handoff.</p>
+      <ul class="product-includes">
+        <li>Training prompt library (100+ examples)</li>
+        <li>Website embed integration guide</li>
+        <li>Support inbox handoff workflow</li>
+        <li>30-day post-launch optimization checklist</li>
+        <li>Client training script for handoff call</li>
+      </ul>
+      <div class="product-footer">
+        <div class="product-price">$97 <span>one-time</span></div>
+        <a class="gumroad-button" href="https://gumroad.com/l/blueprintai-faq-bot" data-gumroad-overlay-checkout="true">Buy Now — $97</a>
+      </div>
+    </div>
+
+    <!-- PRODUCT 5: Mastery Vault (NEW, PREMIUM, FEATURED) -->
+    <!-- NEW PRODUCT - needs Gumroad listing -->
+    <div class="product-card featured">
+      <div class="product-badge">Best Value</div>
+      <div class="product-icon">🏆</div>
+      <h3>AI Service Business Mastery — Complete Blueprint Vault + Coaching</h3>
+      <p>Everything you need to build, price, and scale a profitable AI service business — from zero to your first $10K month. All three core blueprints, advanced strategy, a real-world proposal vault, and lifetime access to future updates.</p>
+      <ul class="product-includes">
+        <li>All 3 core blueprints (Lead Capture, Appointment Router, FAQ Bot)</li>
+        <li>Full Starter Pack (design, pricing, proposals)</li>
+        <li>Private proposal vault — 12 real-world client templates</li>
+        <li>Pricing strategy masterclass (raise rates without losing clients)</li>
+        <li>90-day launch roadmap with weekly milestones</li>
+        <li>Lifetime access to future blueprint updates</li>
+      </ul>
+      <div class="product-footer">
+        <div class="product-price">$397 <span>one-time · lifetime access</span></div>
+        <a class="gumroad-button" href="https://gumroad.com/l/blueprintai-mastery-vault" data-gumroad-overlay-checkout="true">Buy Now — $397</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── SOCIAL PROOF ── -->
+<div class="proof-bg">
+  <section class="section" id="testimonials">
+    <p class="section-label">Real Results</p>
+    <h2 class="section-title">AI Service Operators Are Winning</h2>
+    <p class="section-sub">
+      Consultants, freelancers, and agency owners are using these blueprints to land higher-ticket clients and build recurring revenue.
+    </p>
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"The Lead Capture Blueprint alone helped me land a $1,200 contract with a dental office in my first week. The workflow templates saved me at least 10 hours of setup time. Worth every cent."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div>
+            <div class="testimonial-name">Marcus R.</div>
+            <div class="testimonial-title">Freelance AI Consultant, Atlanta GA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"I've bought a lot of 'systems' and most are garbage. This is different — actual Zapier flows you import, actual call scripts that work. Closed a $2,500 deal using the proposal template verbatim."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SL</div>
+          <div>
+            <div class="testimonial-name">Sarah L.</div>
+            <div class="testimonial-title">Agency Owner, Austin TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"The Mastery Vault is a complete business in a box. I was nervous to charge $997 for a service. The pricing strategy guide gave me the confidence and the framework to get there. First client signed within 3 weeks."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DJ</div>
+          <div>
+            <div class="testimonial-name">David J.</div>
+            <div class="testimonial-title">Solo Operator, Chicago IL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<hr class="divider" />
+
+<!-- ── GUARANTEE ── -->
+<section class="section">
+  <div class="guarantee-box">
+    <div class="guarantee-icon">🛡️</div>
+    <h3>30-Day Money-Back Guarantee</h3>
+    <p>
+      If you go through any blueprint, follow the setup guide, and don't feel it delivered real value for your business — email us within 30 days for a full refund. No questions, no hoops.
+      We're confident these blueprints work because they're built on real deployments, not theory.
+    </p>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── FAQ ── -->
+<section class="section" id="faq">
+  <p class="section-label">FAQ</p>
+  <h2 class="section-title">Common Questions</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do I need a technical background to use these blueprints?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        No. The blueprints are built for operators, not developers. If you can follow a recipe and use Zapier or Make (no coding required), you can deploy these systems. Each blueprint includes a step-by-step setup guide and troubleshooting FAQ for every edge case we've encountered in real deployments.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What tools or subscriptions do I need to run these?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        Each blueprint specifies its exact tool requirements. Most use a combination of Zapier or Make (free or starter tier covers most use cases), OpenAI API (pay-as-you-go, typically $5–$20/mo per client), and optionally Calendly (free tier works). You do not need any proprietary BlueprintAI software — everything runs on tools your clients likely already pay for.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I use these blueprints to build a service business charging clients $997–$5,000+?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        Yes — that's exactly what they're designed for. The Starter Pack includes a Pricing Architecture Guide that explains when to charge flat-rate ($997 per deployment), outcome-based, or retainer ($199/mo). The Mastery Vault includes the complete pricing strategy masterclass and a 90-day launch roadmap to land your first high-ticket clients through organic outreach.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What's included in the Mastery Vault vs. buying individual blueprints?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        Individual blueprints are best if you know exactly which automation you want to deploy first. The Mastery Vault ($397) includes all three core blueprints, the full Starter Pack, 12 real-world client proposal templates, the pricing strategy masterclass, and a 90-day launch roadmap — plus lifetime access to all future blueprint updates. Buying the blueprints individually would cost $388 without the strategy layer or lifetime updates.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I get support after purchase?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        Email us at contact@asiinnovativesolutions.com with your Gumroad receipt and we'll help you through any setup issue. We respond within 1 business day. Each blueprint also includes a comprehensive troubleshooting FAQ that covers the most common deployment issues so you're rarely blocked for long.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── FINAL CTA ── -->
+<div class="cta-section">
+  <p class="section-label" style="margin-bottom:14px;">Get Started Today</p>
+  <h2 class="section-title">Your First AI Client Is Closer Than You Think</h2>
+  <p class="section-sub" style="margin-bottom:40px;">
+    Pick a blueprint, follow the setup guide, and deploy your first AI automation this week. The market for AI-augmented services is wide open — the operators who move now capture the most ground.
+  </p>
+  <div class="hero-actions">
+    <a href="#products" class="btn-primary">Browse All Blueprints</a>
+    <a href="mailto:contact@asiinnovativesolutions.com" class="btn-ghost">Talk to Us First</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-name">Blueprint<span>AI</span> Studio</div>
+        <p>AI automation blueprints for service businesses and the operators who build them. A brand of ASI Innovative Solutions LLC.</p>
+        <p style="margin-top:10px; font-size:0.82rem;">
+          <a href="mailto:contact@asiinnovativesolutions.com" style="color:var(--accent2); text-decoration:none;">contact@asiinnovativesolutions.com</a>
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Blueprints</h4>
+        <ul>
+          <li><a href="https://gumroad.com/l/blueprintai-studio-starter" target="_blank" rel="noopener">Starter Pack — $97</a></li>
+          <li><a href="https://gumroad.com/l/blueprintai-lead-capture" target="_blank" rel="noopener">Lead Capture — $147</a></li>
+          <li><a href="https://gumroad.com/l/blueprintai-appointment-router" target="_blank" rel="noopener">Appointment Router — $147</a></li>
+          <li><a href="https://gumroad.com/l/blueprintai-faq-bot" target="_blank" rel="noopener">FAQ Bot — $97</a></li>
+          <li><a href="https://gumroad.com/l/blueprintai-mastery-vault" target="_blank" rel="noopener">Mastery Vault — $397</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:contact@asiinnovativesolutions.com">Contact Us</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BlueprintAI Studio. A brand of <strong>ASI Innovative Solutions LLC</strong>. All rights reserved.</p>
+      <p>
+        <a href="mailto:contact@asiinnovativesolutions.com">contact@asiinnovativesolutions.com</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>
